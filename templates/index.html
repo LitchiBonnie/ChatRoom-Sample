@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyChat - Simple Chat Room</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <h1>PyChat - Simple Chat Room</h1>
+        </header>
+        
+        <div class="chat-window" id="chatWindow">
+            <!-- Messages will be displayed here -->
+        </div>
+        
+        <div class="avatar-selection">
+            <h3>Choose your avatar:</h3>
+            <div class="avatar-grid">
+                <div class="avatar-option" data-avatar="😀" data-emoji="😀">
+                    <span class="avatar-emoji">😀</span>
+                </div>
+                <div class="avatar-option" data-avatar="😎" data-emoji="😎">
+                    <span class="avatar-emoji">😎</span>
+                </div>
+                <div class="avatar-option" data-avatar="🤖" data-emoji="🤖">
+                    <span class="avatar-emoji">🤖</span>
+                </div>
+                <div class="avatar-option" data-avatar="🐱" data-emoji="🐱">
+                    <span class="avatar-emoji">🐱</span>
+                </div>
+                <div class="avatar-option" data-avatar="🚀" data-emoji="🚀">
+                    <span class="avatar-emoji">🚀</span>
+                </div>
+                <div class="avatar-option" data-avatar="⭐" data-emoji="⭐">
+                    <span class="avatar-emoji">⭐</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="message-input-container">
+            <input type="text" id="messageInput" placeholder="Type your message here..." maxlength="500">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <!-- Include Socket.IO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <!-- Include custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
